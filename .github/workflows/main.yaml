@@ -12,8 +12,6 @@ jobs:
         uses: ./
         with:
           appId: ${{secrets.FIREBASE_APP_ID}} 
-          token: ${{secrets.FIREBASE_TOKEN}} 
-          groups: Testers 
           file: app-release.apk
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.CREDS}}
