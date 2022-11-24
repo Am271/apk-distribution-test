@@ -8,10 +8,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Get sample .apk for test purposes
         run: wget https://filebin.net/f82qp3youyptbq0w/app-release.apk
-      - name: Upload artifact to Firebase Distribution  
-        uses: ./
+      - name: Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.4.0
         with:
-          appId: ${{secrets.FIREBASE_APP_ID}} 
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          serviceCredentialsFileContent: ${{ secrets.CREDS }}
           file: app-release.apk
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{secrets.CREDS}}
